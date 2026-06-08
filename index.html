@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 <title>Lively Fault</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin"/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
 
 <style>
@@ -277,412 +277,16 @@ main.visible{opacity:1;pointer-events:all;}
   background-size:40px 40px;
 }
 
-.hero-content{position:relative;z-index:2;}
-
-.hero-tag{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:var(--fs);font-size:.6rem;font-weight:600;
-  letter-spacing:.25em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:16px;
-  opacity:0;transform:translateY(12px);
-  animation:fadeUp .7s var(--ease) .1s forwards;
-}
-.hero-tag::before{
-  content:'';width:20px;height:1px;background:var(--accent);
-}
-
-.hero-title{
-  font-family:var(--fs);font-weight:800;
-  font-size:clamp(3.4rem,14vw,8rem);
-  line-height:.9;letter-spacing:-.03em;
-  color:var(--white);
-  opacity:0;transform:translateY(20px);
-  animation:fadeUp .8s var(--ease) .2s forwards;
-}
-.hero-title .alt{
-  display:block;color:var(--accent);
-  font-size:.45em;font-weight:500;letter-spacing:.01em;
-  margin-bottom:6px;
-}
-.hero-title .main-word{display:block;}
-
-.hero-sub{
-  font-size:.82rem;font-weight:300;color:var(--soft);
-  line-height:1.6;max-width:280px;margin-top:16px;
-  opacity:0;transform:translateY(12px);
-  animation:fadeUp .7s var(--ease) .38s forwards;
-}
-
-/* Scroll indicator */
-.hero-scroll{
-  position:absolute;right:24px;bottom:56px;z-index:2;
-  display:flex;flex-direction:column;align-items:center;gap:8px;
-  opacity:0;animation:fadeUp .7s var(--ease) .9s forwards;
-}
-.hero-scroll span{
-  font-family:var(--fs);font-size:.55rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--muted);
-  writing-mode:vertical-rl;
-}
-.hero-scroll-line{
-  width:1px;height:48px;background:linear-gradient(var(--border),transparent);
-  animation:scrollLine 2s ease-in-out infinite;
-}
-@keyframes scrollLine{
-  0%{transform:scaleY(0);transform-origin:top;}
-  50%{transform:scaleY(1);transform-origin:top;}
-  51%{transform-origin:bottom;}
-  100%{transform:scaleY(0);transform-origin:bottom;}
-}
-
-/* ── MARQUEE ───────────────────────── */
-.marquee-wrap{
-  overflow:hidden;border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  padding:14px 0;background:var(--off-black);
-}
-.marquee-track{
-  display:flex;gap:0;white-space:nowrap;
-  animation:marquee 18s linear infinite;
-}
-.marquee-track:hover{animation-play-state:paused;}
-.marquee-item{
-  font-family:var(--fs);font-size:.68rem;font-weight:600;
-  letter-spacing:.18em;text-transform:uppercase;
-  color:var(--muted);padding:0 32px;
-  display:flex;align-items:center;gap:16px;
-}
-.marquee-item .dot{
-  width:4px;height:4px;border-radius:50%;
-  background:var(--accent);flex-shrink:0;
-}
-.marquee-item.highlight{color:var(--accent);}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* ── SECTION BASE ──────────────────── */
-section{padding:80px 24px;position:relative;}
-section + section{padding-top:0;}
-
-.section-eyebrow{
-  font-family:var(--fs);font-size:.58rem;font-weight:600;
-  letter-spacing:.28em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:20px;
-  display:flex;align-items:center;gap:10px;
-}
-.section-eyebrow::before{
-  content:'';width:16px;height:1px;background:var(--accent);
-}
-
-.section-title{
-  font-family:var(--fs);font-weight:800;
-  font-size:clamp(2.4rem,10vw,5.5rem);
-  line-height:.95;letter-spacing:-.025em;
-  color:var(--white);margin-bottom:20px;
-}
-.section-title .muted{color:var(--border);-webkit-text-stroke:1px var(--border);background:none;}
-
-.section-body{
-  font-size:.88rem;font-weight:300;
-  color:var(--soft);line-height:1.75;
-  max-width:320px;
-}
-
-/* ── FEATURE CARD ──────────────────── */
-.feature-card{
-  background:var(--off-black);
-  border:1px solid var(--border);
-  border-radius:16px;padding:28px 24px;
-  margin-top:20px;position:relative;overflow:hidden;
-}
-.feature-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--accent),transparent);
-  opacity:.4;
-}
-.feature-number{
-  font-family:var(--fs);font-size:3.5rem;font-weight:800;
-  line-height:1;letter-spacing:-.04em;color:var(--accent);
-  margin-bottom:8px;
-}
-.feature-number sup{font-size:.4em;vertical-align:super;}
-.feature-label{
-  font-family:var(--fs);font-size:.72rem;font-weight:600;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--light);
-}
-.feature-desc{
-  font-size:.8rem;color:var(--muted);line-height:1.6;margin-top:8px;
-}
-
-/* Two col grid for feature cards */
-.feature-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;
-}
-.feature-grid .feature-card{margin:0;}
-
-/* ── IMAGE BLOCK ───────────────────── */
-.img-block{
-  width:calc(100% + 48px);margin-left:-24px;
-  background:var(--dark);
-  aspect-ratio:4/5;position:relative;overflow:hidden;
-}
-.img-block-inner{
-  position:absolute;inset:0;
-  /* Aap chahein toh yahan bhi background image laga sakte hain */
-  background:linear-gradient(135deg, #111 0%, #1a1a1a 100%);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--fs);font-size:.62rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--border);
-}
-.img-overlay-text{
-  position:absolute;bottom:24px;left:24px;right:24px;z-index:2;
-  font-family:var(--fs);font-size:1.8rem;font-weight:800;
-  letter-spacing:-.02em;line-height:1.1;color:var(--white);
-  text-shadow:0 2px 20px rgba(0,0,0,.5);
-}
-.img-overlay-text em{color:var(--accent);font-style:normal;}
-
-/* ── PLATFORM SECTION ──────────────── */
-#platforms{padding-bottom:100px;}
-
-.dialogue-box{
-  background:var(--off-black);
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:28px 24px 24px;
-  margin-bottom:20px;
-  position:relative;
-  overflow:hidden;
-}
-.dialogue-box::after{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 60% 60% at 50% -10%, rgba(232,255,71,.06), transparent);
-  pointer-events:none;
-}
-.dialogue-quote{
-  font-family:var(--fs);font-size:1.6rem;font-weight:700;
-  line-height:1.2;letter-spacing:-.02em;color:var(--white);
-  margin-bottom:16px;
-  min-height:80px;
-  transition:opacity .35s cubic-bezier(.4,0,.2,1);
-}
-.dialogue-quote.fading{opacity:0;}
-
-/* typing dots */
-.dots{display:inline-flex;gap:4px;align-items:center;}
-.dots span{
-  width:6px;height:6px;border-radius:50%;
-  background:var(--accent);opacity:.3;
-  animation:dotpop 1.1s ease-in-out infinite;
-}
-.dots span:nth-child(2){animation-delay:.18s;}
-.dots span:nth-child(3){animation-delay:.36s;}
-@keyframes dotpop{0%,60%,100%{transform:scale(1);opacity:.3}30%{transform:scale(1.4);opacity:1}}
-
-.source-pill{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:5px 12px;border-radius:30px;
-  font-family:var(--fs);font-size:.58rem;font-weight:600;
-  letter-spacing:.15em;text-transform:uppercase;
-  margin-bottom:14px;
-  opacity:0;transform:translateY(4px);
-  transition:opacity .5s,transform .5s;
-}
-.source-pill.show{opacity:1;transform:none;}
-.source-pill.from-yt{background:rgba(255,50,50,.12);color:#ff6b6b;border:1px solid rgba(255,50,50,.2);}
-.source-pill.from-ig{background:rgba(200,80,230,.12);color:#d580ff;border:1px solid rgba(200,80,230,.2);}
-
-/* ── BUTTONS ───────────────────────── */
-.btn-group{display:flex;flex-direction:column;gap:10px;}
-.btn-group.dual{flex-direction:row;}
-
-.btn{
-  flex:1;display:flex;align-items:center;justify-content:space-between;
-  padding:18px 20px;border-radius:12px;
-  font-family:var(--fs);font-size:.78rem;font-weight:700;
-  letter-spacing:.08em;text-transform:uppercase;
-  text-decoration:none;border:none;cursor:none;
-  position:relative;overflow:hidden;
-  transition:transform .25s cubic-bezier(.34,1.56,.64,1);
-  -webkit-tap-highlight-color:transparent;
-}
-.btn:active{transform:scale(.97);}
-
-/* Shimmer on hover */
-.btn::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.1) 50%,transparent 60%);
-  transform:translateX(-100%);
-  transition:transform .5s ease;
-}
-.btn:hover::after{transform:translateX(100%);}
-
-.btn-left{display:flex;align-items:center;gap:10px;}
-.btn-icon-box{
-  width:28px;height:28px;border-radius:6px;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
-}
-.btn-arrow{font-size:1rem;opacity:.7;transition:transform .3s,opacity .3s;}
-.btn:hover .btn-arrow{transform:translateX(4px);opacity:1;}
-
-.btn-yt{
-  background:linear-gradient(135deg,#8b0000 0%,#cc0000 100%);
-  color:#fff;
-  box-shadow:0 4px 24px rgba(200,0,0,.22);
-}
-.btn-yt:hover{transform:translateY(-2px);}
-.btn-yt .btn-icon-box{background:rgba(255,255,255,.15);}
-
-.btn-ig{
-  background:linear-gradient(135deg,#5a1080 0%,#b22080 50%,#e05020 100%);
-  color:#fff;
-  box-shadow:0 4px 24px rgba(180,40,130,.22);
-}
-.btn-ig:hover{transform:translateY(-2px);}
-.btn-ig .btn-icon-box{background:rgba(255,255,255,.15);}
-
-/* ── STATS ROW ─────────────────────── */
-.stats-row{
-  display:flex;gap:0;
-  border:1px solid var(--border);border-radius:16px;
-  overflow:hidden;margin-top:32px;
-}
-.stat{
-  flex:1;padding:20px 16px;text-align:center;
-  border-right:1px solid var(--border);
-}
-.stat:last-child{border-right:none;}
-.stat-num{
-  font-family:var(--fs);font-size:1.4rem;font-weight:800;
-  letter-spacing:-.03em;color:var(--accent);
-}
-.stat-label{
-  font-family:var(--fs);font-size:.55rem;font-weight:600;
-  letter-spacing:.15em;text-transform:uppercase;
-  color:var(--muted);margin-top:4px;
-}
-
-/* ── COLOR VARIANTS ROW ────────────── */
-.variants-row{
-  display:flex;gap:8px;margin-top:28px;
-}
-.variant-chip{
-  height:32px;border-radius:30px;flex:1;
-  position:relative;overflow:hidden;
-  border:1px solid rgba(255,255,255,.06);
-}
-.variant-chip span{
-  position:absolute;bottom:0;left:0;right:0;
-  font-family:var(--fs);font-size:.5rem;font-weight:600;
-  letter-spacing:.1em;text-transform:uppercase;
-  text-align:center;padding:5px;
-  background:linear-gradient(transparent,rgba(0,0,0,.5));
-  color:rgba(255,255,255,.7);
-}
-
-/* ── FOOTER ────────────────────────── */
-footer{
-  border-top:1px solid var(--border);
-  padding:32px 24px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.footer-brand{
-  font-family:var(--fs);font-size:.7rem;font-weight:700;
-  letter-spacing:.08em;color:var(--muted);
-}
-.footer-brand em{color:var(--accent);font-style:normal;}
-.footer-copy{
-  font-size:.62rem;color:var(--border);letter-spacing:.05em;
-}
-
-/* ── OUTRO / LINK ANIMATION ────────── */
-#outro{
-  position:fixed;inset:0;z-index:800;
-  background:var(--black);
-  opacity:0;pointer-events:none;
-  transition:opacity .7s cubic-bezier(.7,0,.3,1);
-}
-#outro.active{opacity:1;pointer-events:all;}
-
-.burst-dot{
-  position:fixed;border-radius:50%;pointer-events:none;z-index:790;
-  animation:burst .65s cubic-bezier(.22,1,.36,1) forwards;
-}
-@keyframes burst{
-  0%{transform:translate(0,0) scale(1);opacity:1;}
-  100%{transform:var(--tx) var(--ty) scale(0);opacity:0;}
-}
-
-/* ── REVEAL ON SCROLL ──────────────── */
-.reveal{
-  opacity:0;transform:translateY(28px);
-  transition:opacity .8s var(--ease), transform .8s var(--ease);
-}
-.reveal.in{opacity:1;transform:none;}
-
-/* ── KEYFRAMES ─────────────────────── */
-@keyframes fadeUp{to{opacity:1;transform:none;}}
-@keyframes slideUp{to{opacity:1;transform:none;}}
-
-/* ── MOBILE ADJUSTMENTS ────────────── */
-@media(max-width:380px){
-  .btn-group.dual{flex-direction:column;}
-  .feature-grid{grid-template-columns:1fr;}
-}
-</style>
-</head>
-<body>
-
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
-<div id="scroll-bar"></div>
-
-<!-- ══ INTRO FULLSCREEN ════════════ -->
-<div id="intro">
-  <p class="intro-eyebrow">Welcome to</p>
-  <h1 class="intro-wordmark">
-    <span class="line1">Lively</span>
-    <span class="line2">Fault.</span>
-  </h1>
-  <p class="intro-sub">Content · Community · Connection</p>
-  <div class="intro-line"></div>
-  <p class="intro-cta">Tap to explore</p>
-</div>
-
-<!-- ══ SCROLL BAR PROGRESS ════════ -->
-
-<!-- ══ NAV ════════════════════════ -->
-<nav id="nav">
-  <span class="nav-logo">Lively <em>Fault</em></span>
-  <div class="nav-dot"></div>
-</nav>
-
-<!-- ══ MAIN ═══════════════════════ -->
-<main id="main">
-
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-bg"></div>
-    
-    <!-- Smooth animation handles this clean block -->
-    <div id="hero-photo">
-      <div id="hero-photo-inner"></div>
-    </div>
-    <div class="hero-bg-overlay"></div>
-    <div class="hero-grid"></div>
-
+/* ── HERO ZONE TEXT ALIGNMENT FIXED ── */
 <div class="hero-content" style="position: absolute; bottom: 15px; left: 0; right: 0; z-index: 99; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 24px; box-sizing: border-box; pointer-events: none; margin-bottom: 0;">
-  <!-- Small tag -->
   <div class="hero-tag" style="font-size: 0.95rem; letter-spacing: 0.05em; text-transform: none; margin-bottom: 4px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; opacity: 1; transform: none; animation: none;">
     Hii, 👋
   </div>
   
-  <!-- Main bold identity line -->
   <h2 class="hero-title" style="font-size: clamp(2.4rem, 11vw, 4rem); line-height: 1.05; letter-spacing: -0.02em; font-weight: 800; text-transform: uppercase; margin: 0; opacity: 1; transform: none; animation: none;">
     Iam an <span style="color: var(--accent); font-family: var(--fs); display: inline-flex; align-items: center; gap: 4px;">alien 👽</span>
   </h2>
   
-  <!-- Subtitle moved even tighter to the bottom -->
   <p class="hero-sub" style="font-size: 0.85rem; color: var(--soft); margin-top: 6px; font-weight: 400; letter-spacing: 0.02em; opacity: 1; transform: none; animation: none; margin-bottom: 0;">
     Scroll for more and do follow 👇
   </p>
@@ -694,12 +298,10 @@ footer{
     </div>
   </section>
 
-  <!-- MARQUEE -->
   <div class="marquee-wrap">
     <div class="marquee-track" id="marqueeTrack"></div>
   </div>
 
-  <!-- FEATURE SECTION -->
   <section id="features">
     <div class="section-eyebrow reveal">About</div>
     <h2 class="section-title reveal">
@@ -738,7 +340,6 @@ footer{
     </div>
   </section>
 
-  <!-- IMAGE BLOCK -->
   <div class="img-block reveal" id="imgBlock">
     <div class="img-block-inner">
       <span>[ photo placeholder ]</span>
@@ -746,7 +347,6 @@ footer{
     <div class="img-overlay-text">The<br><em>Real</em><br>Side.</div>
   </div>
 
-  <!-- PLATFORM / DIALOGUE SECTION -->
   <section id="platforms">
     <div class="section-eyebrow reveal">Choose Your Path</div>
     <h2 class="section-title reveal" style="font-size:clamp(1.8rem,7vw,3.2rem);margin-bottom:28px;">
@@ -770,10 +370,8 @@ footer{
 
 </main>
 
-<!-- OUTRO -->
 <div id="outro"></div>
 
-<!-- SVG ICONS -->
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
   <symbol id="ico-yt" viewBox="0 0 24 24">
     <path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93 .502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -849,7 +447,7 @@ const track=document.getElementById('marqueeTrack');
   track.appendChild(d);
 });
 
-/* ── INTRO → MAIN ────────────────── */
+/* ── INTRO → MAIN (DELAY FIXED TO ULTRA FAST) ── */
 let introDone=false;
 function revealMain(){
   if(introDone)return;
@@ -858,18 +456,21 @@ function revealMain(){
   nav.classList.add('visible');
   mainEl.classList.add('visible');
 
-  // Photo slides in from top after intro fades
+  // Photo slides in right away without lag
   setTimeout(()=>{
     const photo = document.getElementById('hero-photo');
     if(photo) photo.classList.add('reveal-photo');
-  }, 600);
+  }, 250);
 
-  setTimeout(initDialogue, 400);
+  setTimeout(initDialogue, 150);
 }
+
+// Instant execution on interaction
 intro.addEventListener('click',revealMain);
-intro.addEventListener('touchend',e=>{e.preventDefault();revealMain();},{passive:false});
-// Auto-reveal after 4s if user doesn't tap
-setTimeout(revealMain, 4000);
+intro.addEventListener('touchstart',() => { revealMain(); }, {passive:true});
+
+// Automatic backup trigger cut down from 4000ms to 1200ms
+setTimeout(revealMain, 1200);
 
 /* ── SCROLL REVEAL ───────────────── */
 const revealEls=document.querySelectorAll('.reveal');
