@@ -869,7 +869,7 @@ function revealMain(){
 intro.addEventListener('click',revealMain);
 intro.addEventListener('touchend',e=>{e.preventDefault();revealMain();},{passive:false});
 // Auto-reveal after 4s if user doesn't tap
-setTimeout(revealMain, 4000);
+setTimeout(revealMain, 2000);
 
 /* ── SCROLL REVEAL ───────────────── */
 const revealEls=document.querySelectorAll('.reveal');
