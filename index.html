@@ -74,7 +74,7 @@ body{
 /* ── NOISE / GRAIN ─────────────────── */
 body::after{
   content:'';position:fixed;inset:0;z-index:1000;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns="http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
   background-size:160px;opacity:.032;
 }
 
@@ -222,27 +222,14 @@ main.visible{opacity:1;pointer-events:all;}
   0%  {opacity:0; clip-path:inset(100% 0 0 0);}
   100%{opacity:1; clip-path:inset(0% 0 0 0);}
 }
-<div id="hero-photo" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGIglVgTp7zJThJim1m7UfL_X623XizIigoijGo0R1PiA9KnHnRXgs2KsDPOUld3XJku__n6SSP6oimL_oECGugY_rOZXy7y8SOQGU452NC1DvWmjXmi77Mx5DabApAXgVGpNTv9N3P2LYHQaKfEO22OqLSxIRdw6JADeK-IUnQe6oN7zD-kD9VHAsdQo/s3639/InsMix_20251214_202651560.jpg'); height: 400px; background-size: cover; background-position: center;">
-</div>
-/*
-  ╔════════════════════════════════════════════════╗
-  ║  #hero-photo — PHOTO PLACEHOLDER              ║
-  ║  Intro khatam hone ke baad ye slide-in aata   ║
-  ║  hai upar se. Photo add karne ke liye:        ║
-  ║                                               ║
-  ║  <div id="hero-photo"                         ║
-  ║    style="background-image:url('photo.jpg')"> ║
-  ║                                               ║
-  ║  Recommended: portrait 9:16, min 800×1400px  ║
-  ╚════════════════════════════════════════════════╝
-*/
+
 #hero-photo-inner{
   position:absolute;inset:0;
   background-size:cover;
   background-position:center top;
   background-color:#1a1212;
-  /* ⬇ REPLACE THIS with your image */
-  /* background-image:url('your-photo.jpg'); */
+  /* Image added here natively via URL */
+  background-image:url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGIglVgTp7zJThJim1m7UfL_X623XizIigoijGo0R1PiA9KnHnRXgs2KsDPOUld3XJku__n6SSP6oimL_oECGugY_rOZXy7y8SOQGU452NC1DvWmjXmi77Mx5DabApAXgVGpNTv9N3P2LYHQaKfEO22OqLSxIRdw6JADeK-IUnQe6oN7zD-kD9VHAsdQo/s3639/InsMix_20251214_202651560.jpg');
 }
 
 /* Gradient fade at bottom so text stays readable */
@@ -440,7 +427,7 @@ section + section{padding-top:0;}
 }
 .img-block-inner{
   position:absolute;inset:0;
-  /* Add background-image: url(...) here */
+  /* Aap chahein toh yahan bhi background image laga sakte hain */
   background:linear-gradient(135deg, #111 0%, #1a1a1a 100%);
   display:flex;align-items:center;justify-content:center;
   font-family:var(--fs);font-size:.62rem;letter-spacing:.2em;
@@ -676,11 +663,8 @@ footer{
   <!-- HERO -->
   <section id="hero">
     <div class="hero-bg"></div>
-    <!-- ════════════════════════════════════════
-         PHOTO DIV — intro khatam hote hi
-         yahan se upar se slide-in aayegi photo.
-         background-image add karo #hero-photo-inner pe
-         ════════════════════════════════════════ -->
+    
+    <!-- Smooth animation handles this clean block -->
     <div id="hero-photo">
       <div id="hero-photo-inner"></div>
     </div>
@@ -749,7 +733,6 @@ footer{
   <!-- IMAGE BLOCK -->
   <div class="img-block reveal" id="imgBlock">
     <div class="img-block-inner">
-      <!-- Add photo here: style="background-image:url('photo.jpg')" -->
       <span>[ photo placeholder ]</span>
     </div>
     <div class="img-overlay-text">The<br><em>Real</em><br>Side.</div>
@@ -785,7 +768,7 @@ footer{
 <!-- SVG ICONS -->
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
   <symbol id="ico-yt" viewBox="0 0 24 24">
-    <path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+    <path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93 .502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
   </symbol>
   <symbol id="ico-ig" viewBox="0 0 24 24">
     <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
@@ -798,7 +781,7 @@ footer{
 
 /* ── CONFIG ──────────────────────── */
 const LINKS = {
-  youtube:  'https://www.youtube.com/@LivelyFault',
+  youtube:   'https://www.youtube.com/@LivelyFault',
   instagram:'https://www.instagram.com/lively_fault_?'
 };
 const MESSAGES = {
